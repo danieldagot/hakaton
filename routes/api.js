@@ -1,9 +1,9 @@
 const express = require( 'express' )
 const router = express.Router()
-const ColorModel = require( '../mongoose/models/color' )
-const ColorsApi = require( '../lib/colors-api' )
+//const ColorModel = require( '../mongoose/models/color' )
 
-let api = new ColorsApi()
+
+//let api = new ColorsApi()
 
 router.get( '/colors', ( req, res ) => {
     ColorModel.find( {}, ( err, data ) => res.json( data ) )
