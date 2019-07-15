@@ -19,7 +19,7 @@ app.use( '/', router )
 
 
 
-mongoose.connect( 'mongodb://localhos/users', { useNewUrlParser: true } ).then( () => {
+mongoose.connect( 'mongodb://localhost/users', { useNewUrlParser: true } ).then( () => {
 
     app.listen( port, () => console.log( `Running server on port ${ port }` ) )
 } )
