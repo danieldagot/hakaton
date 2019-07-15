@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Selouse</title>
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+    integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+  <div class=continer>
+    <div class=text> Name
+      <br>
+      <input type="text" name="name">
+      <br>
+    </div>
+    <div class=text> Height
+      <br>
+      <input type="number" name="Hight" placeholder="in cm">
+      <br>
+
+    </div>
+    <div class=text> Weight
+      <br>
+      <input type="number" name="Whait" placeholder="in kg">
+      <br>
+    </div>
+    
+    <div class=text> My Activite Level </div>
+    <div class="slidecontainer">
+      <input type="range" min="1" max="5" value="3" class="slider" id="myRange">
+       <div><span id="demo" style="text-align-last: center"></span></div>
+    </div>
+
+    <input type="submit" value="Submit">
+
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
+  <script src="main.js"></script>
+</body>
+
+</html>
