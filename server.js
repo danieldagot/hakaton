@@ -15,11 +15,11 @@ app.use( bodyParser.urlencoded( { extended: false } ) )
 
 app.use( express.static( path.join( __dirname, 'public' ) ) )
 app.use( '/', router )
-
+ 
 
 
 
 mongoose.connect( 'mongodb://localhost/users', { useNewUrlParser: true } ).then( () => {
-
+    mongoose.set('useFindAndModify', false);
     app.listen( port, () => console.log( `Running server on port ${ port }` ) )
 } )

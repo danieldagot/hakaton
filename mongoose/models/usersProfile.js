@@ -1,7 +1,7 @@
 const mongoose = require( 'mongoose' )
 const Schema = mongoose.Schema
 
-const user = new Schema( {
+const userSchema = new Schema( {
     name : String,
     age: Number,
     activity : Number,
@@ -14,7 +14,7 @@ const user = new Schema( {
     activity : Number,
     condition: String , 
     recomandetCal : Number,
-    saveDate : Date ,
+    saveDate : String ,
 
 } )
 
@@ -24,6 +24,6 @@ const user = new Schema( {
 //     rgb: RGBColor
 // } )
 
-// const Color = mongoose.model( 'color', ColorSchema )
+ const usersProfile = mongoose.model( 'usersProfile', userSchema )
 
-//module.exports = Color
+module.exports = usersProfile

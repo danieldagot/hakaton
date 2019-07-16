@@ -83,7 +83,8 @@ class logic {
   constructor(height, weight,age,sex,activity)
   {
     
-      
+    this.height = height
+    this.weight = weight
       this.bmi = this.get_bmi(height, weight)
       this.bmr = this.get_bmr(height, weight,age,sex)
       this.cal = this.get_cal(this.bmr,activity)
