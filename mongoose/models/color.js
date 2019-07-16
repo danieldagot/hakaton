@@ -1,11 +1,22 @@
 const mongoose = require( 'mongoose' )
 const Schema = mongoose.Schema
 
-// const RGBColor = new Schema( {
-//     R: Number,
-//     G: Number,
-//     B: Number
-// } )
+const user = new Schema( {
+    name : String,
+    age: Number,
+    activity : Number,
+    height : Number,
+    weight : Number,
+    sex : Number,
+    bmi : Number,
+    bmr : Number,
+    cal : Number,
+    activity : Number,
+    condition: String , 
+    recomandetCal : Number,
+    saveDate : Date ,
+
+} )
 
 // const ColorSchema = new Schema( {
 //     name: String,
