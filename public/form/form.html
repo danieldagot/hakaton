@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Form</title>
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+    integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="form.css" />
+</head>
+
+
+
+<body>
+  <center>
+     <h1 class='MainTitle'>Hey There, Welcome to<br> <span id='healthChoice'>HealthCh<i id='heart'class="fas fa-heartbeat"></i>ice!</span></h1>
+     <h2 class='SecondTitle'>In order for us to get to know you better please fill the form below:</h2>
+    </center> 
+
+    <div class=continer>
+    <form name="Form" id="Form" method="post" action="../FormData.aspx"  onsubmit="return SubmitCheck();">
+      
+      <table class='table'>
+          <tr>
+              <td>Full Name: </td>
+              <td> <input type="text" id="FullName" onblur="NameCheck('FullName', 'NameError');" /></td>
+              <td> <div id="NameError" class='Error'> </div> </td>
+          </tr>
+
+          <tr>
+              <td>Age: </td>
+              <td> <input type="text" id="Age" onblur="NumCheck('Age', 'AgeError');" /></td>
+              <td> <div id="AgeError" class='Error'> </div> </td>
+          </tr>
+  
+          <tr>
+              <td>Height: </td>
+              <td> <input type="text" id="Height" placeholder="Must Be In CM" onblur="NumCheck('Height', 'HeightError');" /></td>
+              <td> <div id="HeightError" class='Error'> </div> </td>
+          </tr>
+
+          <tr>
+              <td>Weight: </td>
+              <td> <input type="text" id="Weight" placeholder="Must Be In KG" onblur="NumCheck('Weight', 'WeightError');" /></td>
+              <td> <div id="WeightError" class='Error'> </div> </td>
+          </tr>
+
+      <tr>
+          <td class="Gender">Gender:</td>
+          <td>Male:<input type="radio" id="GenderM" name='Male' value="male" Checked/>
+              Female:<input type="radio" id="GenderF" name='Female' value="female"/>
+          </td>
+      </tr>
+
+  
+      <tr>
+          <td class=text> My Activity Level </td>
+          <td class="slidecontainer">
+            <input type="range" min="1" max="5" value="3" class="slider" id="myRange">
+             <td><span id="demo" style="text-align-last: center"></span>
+            </td>
+          </td>
+        </tr>
+
+        <tr>
+          <td></td>
+          <td><div id='slideResult'>Moderate Exercise 3-5 Days/Week</div></td></tr>
+
+
+          <tr>
+          <td class="submitButton"><input type="submit" name="Submit" value="Submit" class='button'/> </td>
+          <td class="cleanButton"><input type="reset" name="Clean Form" value="Clean Form" class='button'/></td>
+                  <td>
+                      <div style="visibility: hidden" id="UserCheck">
+                      </div>
+              </td>
+          </tr>
+       
+      </table>
+      </form>
+
+  </div>
+
+
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
+  <script src="FormCheck.js"></script>
+</body>
+
+</html>
