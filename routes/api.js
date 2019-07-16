@@ -1,43 +1,44 @@
 const express = require( 'express' )
 const router = express.Router()
-//const ColorModel = require( '../mongoose/models/color' )
+const logic = require( "../logic/logic.js" )
 
 
 //let api = new ColorsApi()
 
-router.get( '/colors', ( req, res ) => {
-    ColorModel.find( {}, ( err, data ) => res.json( data ) )
+router.get( '/getProfile', ( req, res ) => {
+  let data = req.body
+  console.log(data);
+
+  let l = new logic(data.height,data.weight,data.age,data.sex,data.activity)
+  res.send(l)
+} )
+
+
+router.get( '/getProfile/:name', async ( req, res ) => {
+
 } )
 
 /**
- * Search the color in the external API and save it
- * After the save action, display it to the client
- */
-router.get( '/color/:hex', async ( req, res ) => {
-    const color = req.params.hex
-    const result = await api.fetchColorByName( color )
-
-    const model = new ColorModel( result )
-
-    model.save( () => res.json( { success: true, color: result } ) )
-} )
-
-/**
- * Just a simple route to delete something by it's id
- */
+* Just a simple route to delete something by it's id
+*/
 router.delete( '/color/:id', ( req, res ) => {
-    const id = req.params.id
+
 } )
 
+
+router.post( '/getProfile/:name', ( req, res ) => {
 /**
- * POST route to create a new color
- * Receives the color body and save it in the db
- */
-router.post( '/color', ( req, res ) => {
-    const colorBody = req.body
-    const color = new ColorModel( colorBody )
+* create neu user fon the databace */
 
-    color.save( () => res.json( { success: true } ) )
 } )
+
+
+router.put( '/getProfile/:name', ( req, res ) => {
+   /**
+    *  crrete new page of the user in the databace */
+
+   } )
+
+
 
 module.exports = router
