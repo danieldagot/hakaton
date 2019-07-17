@@ -28,3 +28,6 @@ $(document).ready(function(){
 
 
 //for the iFrame
+if(localStorage.getItem('LogData') == null){
+window.location.replace("http://localhost:8080/form/form.html");
+}

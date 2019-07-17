@@ -21,8 +21,6 @@
     </center> 
 
     <div class=continer>
-    <form name="Form" id="Form" method="post" action="../FormData.aspx"  onsubmit="return SubmitCheck();">
-      
       <table class='table'>
           <tr>
               <td>Full Name: </td>
@@ -50,8 +48,8 @@
 
       <tr>
           <td class="Gender">Gender:</td>
-          <td>Male:<input type="radio" id="GenderM" name='Male' value="male" Checked/>
-              Female:<input type="radio" id="GenderF" name='Female' value="female"/>
+          <td>Male:<input type="radio" id="GenderM" name='GenSelect' value="male" Checked/>
+              Female:<input type="radio" id="GenderF" name='GenSelect' value="female"/>
           </td>
       </tr>
 
@@ -71,7 +69,7 @@
 
 
           <tr>
-          <td class="submitButton"><input type="submit" name="Submit" value="Submit" class='button'/> </td>
+          <td class="submitButton"><input type="submit" name="Submit" value="Submit" class='button' onclick="return SubmitCheck()"/> </td>
           <td class="cleanButton"><input type="reset" name="Clean Form" value="Clean Form" class='button'/></td>
                   <td>
                       <div style="visibility: hidden" id="UserCheck">
@@ -80,7 +78,7 @@
           </tr>
        
       </table>
-      </form>
+      
 
   </div>
 
@@ -89,7 +87,9 @@
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
+  <script src='getFormData.js'></script>
   <script src="FormCheck.js"></script>
+  
 </body>
 
 </html>
