@@ -5,8 +5,9 @@ const user = require("../mongoose/models/user")
 const usersProfile = require("../mongoose/models/usersProfile")
 const moment = require("moment")
 //let api = new ColorsApi()
-
-router.post('/logic', (req, res) => {
+const request = require("request")
+const rp = require("request-promise")
+router.get('/logic', (req, res) => {
     let data = req.body
 
     console.log(data);
@@ -31,7 +32,11 @@ router.get('/getProfile/:name', async (req, res) => {
 
 router.post('/setProfile/:name', async (req, res) => {
     let data = req.body
+<<<<<<< HEAD
+
+=======
  
+>>>>>>> master
     const name = req.params.name
     name = name.replace("+", " ")
     let l = new logic(data.height, data.weight, data.age, data.sex, data.activity)
@@ -57,10 +62,10 @@ router.put('/updateProfile/:name', (req, res) => {
     const u1 = new user(l)
     u1.save()
 
-    usersProfile.findOneAndUpdate({ name: name }, l, { upsert: true }, function (err,doc) {
+    usersProfile.findOneAndUpdate({ name: name }, l, { upsert: true }, function (err, doc) {
         if (err) return res.send(500, { error: err });
         console.log(doc);
-        
+
         return res.send("succesfully saved");
     })
 })
@@ -69,8 +74,30 @@ router.put('/updateProfile/:name', (req, res) => {
 /**
  * Just a simple route to delete something by it's id
  */
-router.delete('/color/:id', (req, res) => {
+router.get('/food/:name', (req, res) => {
+    let name = req.params.name
+    name = "raw+" + name
+    let url = `https://api.nal.usda.gov/ndb/search/?format=json&q=${name}&sort=n&max=1&offset=0&api_key=zVGkx37GaEO8h0hWHtLeQIVwZUWHZd0hB7p9ELEn`
+    request(url, function (err, search) {
+        let item = JSON.parse(search.body)
+        let ndbno = item.list.item[0].ndbno
+        console.log(ndbno);
 
+        const url2 = `https://api.nal.usda.gov/ndb/reports/?ndbno=${ndbno}&type=b&format=json&api_key=zVGkx37GaEO8h0hWHtLeQIVwZUWHZd0hB7p9ELEn`
+        request(url2, function (err, shit) {
+            let food = JSON.parse(shit.body)
+            let mes = food.report.food.nutrients
+
+            let userFilter = mes.filter(u => (u.nutrient_id == 208) || (u.nutrient_id == 203)|| (u.nutrient_id == 204)|| (u.nutrient_id == 205))
+            .map(u =>  {return{"name":u.name,
+            unit : u.unit,
+            value: u.value}})
+            console.log(userFilter);
+            // let userMap = users.map(u => { return { name: u.name, companyName: u.company } })
+            // console.log(userMap);
+            res.send(userFilter)
+        })
+    })
 })
 
 
@@ -100,11 +127,11 @@ router.post('/getProfile/:name', (req, res) => {
 
 
 
-router.put( '/getProfile/:name', ( req, res ) => {
-   /**
-    *  crrete new page of the user in the databace */
+router.put('/getProfile/:name', (req, res) => {
+    /**
+     *  crrete new page of the user in the databace */
 
-   } )
+})
 
 
 
@@ -112,9 +139,9 @@ module.exports = router
 
 
 /**
- * 
- * 
- * 
+ *
+ *
+ *
  * const mongoose = require( 'mongoose' )
 const Schema = mongoose.Schema
 
@@ -129,7 +156,7 @@ const userSchema = new Schema( {
     bmr : Number,
     cal : Number,
     activity : Number,
-    condition: String , 
+    condition: String ,
     recomandetCal : Number,
     saveDate : String ,
 
@@ -145,5 +172,5 @@ const userSchema = new Schema( {
 
 module.exports = user
 
- * 
+ *
  */
