@@ -1,3 +1,30 @@
+body {
+    background-image: url('https://st4.depositphotos.com/5624298/21846/i/1600/depositphotos_218466738-stock-photo-darts-arrows-target-center-colorful.jpg')
+}
+
+
 .test {
     font-size:100px;
 }
+
+
+    input[type=text]:optional {
+        border: 1px solid #eee;
+      }
+
+      .goalContainer {
+        font-size:20px;
+        height:90vh;
+        width: 60vw;
+        border-radius: 20px;
+        font-weight: bold;
+            font-size: 2em;
+            line-height: 200px;
+            text-align: center;
+            background-color: silver;
+            margin-left: 10%; 
+            font-family: PT Sans;
+            opacity: 0.5;
+            -webkit-box-shadow: 0px 0px 30px 11px #ddcdcd; 
+            box-shadow: 0px 0px 30px 11px #ffffff;      
+    }

@@ -1,28 +1,94 @@
+
 <!DOCTYPE html>
 <html>
 
 <head>
   <title>Diary</title>
-
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
     integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="nutrition.css" />
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load("current", { packages: ["corechart"] });
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ['Task', 'Hours per Day'],
+        ['Calories', 11],
+        ['Protein', 2],
+        ['Carbs', 2],
+        ['Fat', 2],
+        ['Fiber', 7]
+      ]);
+
+      var options = {
+        title: 'My Daily Activities',
+        pieHole: 0.4,
+      };
+
+      var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+      chart.draw(data, options);
+    }
+  </script>
 </head>
 
 
 
 <body>
 
-<div class='test'>The Nutrition Page Will Be Here</div>
+  <div class='test'>My Nutrition</div>
+  <div class ="title2">
+    My calories for today: {{}} </br>
+    I ate:
+  </div>
+  <div>
+    <input type="text" id="inputFood" placeholder="Put Your new food here" />
+    <button id="addB">Search!</button>
+  </div>
 
-  
+
+
+  <!-- This will be the Card for the API -->
+  <div class="col s12 m7 l4" id="container">
+
+    <div class="card horizontal">
+      <!-- 
+      <div class="card-image">
+        <img id="foodImg" src="https://dylzm7u8zqclv.cloudfront.net/2019/03/24/21/19/04/89eb25ca-c13b-489d-bf4f-741ba078d592/Cheese2.jpg">
+      </div> -->
+      <div class="card-stacked">
+        <div class="card-content"
+          background-image="https://dylzm7u8zqclv.cloudfront.net/2019/03/24/21/19/04/89eb25ca-c13b-489d-bf4f-741ba078d592/Cheese2.jpg">
+          <h2 class="header">Horizontal Card</h2>
+          <p>I am a very simple card. I am good at containing small bits of information.</p>
+        </div>
+        <div class="card-action">
+
+          <div id="donutchart" style="width: 850px; height: 450px;"></div>
+          <button id="addB">Add it!</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <script id="food-template" type='text/x-handlebars-template'>
+        <div class="food">
+            <div>My calories for today: {{firstName}}</div>
+             <div> {{CalNum}}</div>
+            <div>{{pos}}</div>
+           <div> <img src="https://nba-players.herokuapp.com/players/{{lastName}}/{{firstName}}"></div>
+        </div>
+       
+</script> -->
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
-
+  <script src="nutrition.js"></script>
 </body>
 
 </html>
