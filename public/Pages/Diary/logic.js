@@ -13,17 +13,7 @@ let dateTime = date+' , '+time;
     }
 
     const posts = [
-        {
-            date: "17-7-2019 , 16:43",
-            text: "So today I started my journey! Bacon ipsum dolor amet dolore est tenderloin ut incididunt kevin eiusmod commodo. Ut short ribs jerky lorem officia qui doner pastrami nostrud. Pork belly short loin ball tip nisi sirloin. Prosciutto laborum cillum pastrami, rump ball tip pork belly sirloin adipisicing t-bone. Tri-tip sunt dolore capicola. Jerky deserunt voluptate shank laborum in laboris tempor andouille boudin officia ea ipsum. Boudin dolor flank prosciutto reprehenderit ex pariatur sausage rump, meatloaf quis picanha pastrami.",
-            id: "p1",
-        },
-
-        {
-            date: "17-7-2019 , 17:43",
-            text: "Bacon ipsum dolor amet dolore est tenderloin ut incididunt kevin eiusmod commodo. Ut short ribs jerky lorem officia qui doner pastrami nostrud. Pork belly short loin ball tip nisi sirloin. Prosciutto laborum cillum pastrami, rump ball tip pork belly sirloin adipisicing t-bone. Tri-tip sunt dolore capicola. Jerky deserunt voluptate shank laborum in laboris tempor andouille boudin officia ea ipsum. Boudin dolor flank prosciutto reprehenderit ex pariatur sausage rump, meatloaf quis picanha pastrami.   Brisket magna anim ut bacon. Irure reprehenderit jerky, cow pig filet mignon id. Eu andouille elit ut, cow veniam leberkas biltong esse dolor labore tenderloin doner culpa. Magna strip steak officia sirloin. Officia ullamco beef ribs eu. Beef ribs tenderloin dolore occaecat pork consectetur consequat tempor capicola anim picanha brisket tail frankfurter mollit. Meatball bresaola alcatra andouille, sint ex pork mollit qui consectetur.",
-            id: "p2",
-        },
+    
     ]
 
     const getPosts = () => posts

@@ -1,8 +1,8 @@
 
 class logic {
     get_bmi(height, weight) {
-       let Mhight = height/100
-        return Math.round( (weight / (Mhight * Mhight)) )
+        let Mhight = height / 100
+        return Math.round((weight / (Mhight * Mhight)))
     }
     get_bmr(height, weight, age, sex) {
 
@@ -61,36 +61,39 @@ class logic {
     }
 
     get_recomandet_dcal(weight, height, bmi, time = 24, cal) {
-        let Mhight = height/100
+        let Mhight = height / 100
         const target = Math.abs(22 - bmi) - (Mhight * Mhight)
         console.log(target);
-        
-       let gcal = 7700 * target
-       console.log(gcal);
-       let tcg = gcal/ time
-       if (22 - bmi >= 0) {
-           let r = cal + (tcg/7)
-            return  Math.round(r)
-           
-       } 
-       else{
-        let r = cal - (tcg/7)
-        return Math.round(r)
-       }
+
+        let gcal = 7700 * target
+        console.log(gcal);
+        let tcg = gcal / time
+
+        if (22 - bmi >= 0) {
+            let r = cal + (tcg / 7)
+            console.log(r);
+            
+            return Math.round(r)
+        }
+        else {
+            let r = cal - (tcg / 7)
+            console.log(r);
+            return Math.round(r)
+        }
 
     }
 
-  constructor(height, weight,age,sex,activity)
-  {
-    
-      
-      this.bmi = this.get_bmi(height, weight)
-      this.bmr = this.get_bmr(height, weight,age,sex)
-      this.cal = this.get_cal(this.bmr,activity)
-      this.condition = this.get_bmi_standart(this.bmi)
-      this.recomandetCal = this.get_recomandet_dcal(weight,height,this.bmi,24,this.cal)
-  }
-} 
+    constructor(height, weight, age, sex, activity) {
+
+        this.height = height
+        this.weight = weight
+        this.bmi = this.get_bmi(height, weight)
+        this.bmr = this.get_bmr(height, weight, age, sex)
+        this.cal = this.get_cal(this.bmr, activity)
+        this.condition = this.get_bmi_standart(this.bmi)
+        this.recomandetCal = this.get_recomandet_dcal(weight, height, this.bmi, 24, this.cal)
+    }
+}
 
 module.exports = logic
 
