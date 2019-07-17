@@ -15,14 +15,43 @@
 
 
 <body>
+    <div id="container">
+<center>
+    <h1 class="MainTitle">My Health Diary</h1>
+    <h2 class="SecondTitle">Here you will write about your journey of getting fitter and healthier.</h2>
+</center>
 
-<div class='test'>The Diray Will Be Here</div>
+    <textarea placeholder="How Was Your Day?" id="input"></textarea>
+    <div id="post" onclick="post">Post!</div>
+    
+    
+    
+        <script id="post-template" type="text/x-handlebars-template">
+            {{#each posts}}
+            
+            <div class ='post' data-id="{{id}}">
+              <div class=date>{{date}}</div>
+              <p class='post-text'>{{text}}</p>
+              <button class ="delete">Delete Post</button>
+              </div>
+            
+            {{/each}}
+          
+        </script> 
+        <div id="posts"></div>     
+      </div>
+</div>
+
+  
 
   
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
 
+  <script src="render.js"></script>
+  <script src="logic.js"></script>
+  <script src="main.js"></script>
 </body>
 
 </html>
