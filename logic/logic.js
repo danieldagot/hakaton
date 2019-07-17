@@ -94,6 +94,3 @@ class logic {
 
 module.exports = logic
 
-//zVGkx37GaEO8h0hWHtLeQIVwZUWHZd0hB7p9ELEn
-//https://api.nal.usda.gov/ndb/reports/?ndbno=45205301&type=b&format=json&api_key=zVGkx37GaEO8h0hWHtLeQIVwZUWHZd0hB7p9ELEn
-//https://api.nal.usda.gov/ndb/search/?format=json&q=apple&sort=n&max=25&offset=0&api_key=zVGkx37GaEO8h0hWHtLeQIVwZUWHZd0hB7p9ELEn
