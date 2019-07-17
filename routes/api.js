@@ -7,6 +7,12 @@ const moment = require("moment")
 //let api = new ColorsApi()
 const request = require("request")
 const rp = require("request-promise")
+
+const bodyParser = require('body-parser')
+router.use(bodyParser.json())
+router.use(bodyParser.urlencoded({ extended: false }))
+
+
 router.get('/logic', (req, res) => {
     let data = req.body
 
@@ -17,10 +23,14 @@ router.get('/logic', (req, res) => {
 
 
 router.get('/getProfile/:name', async (req, res) => {
-
+    let data = req.body
+    console.log(data);
     const name = req.params.name
-    usersProfile.findOne({ name: name }, { _id: 0 }).exec(function (err, data) {
-        res.send(data)
+    usersProfile.findOne({ name: name }, { _id: 0 }).exec(function (err, set) {
+        console.log(typeof set);
+        console.log(set);
+
+        res.send(set)
     })
 
 
@@ -32,16 +42,14 @@ router.get('/getProfile/:name', async (req, res) => {
 
 router.post('/setProfile/:name', async (req, res) => {
     let data = req.body
-<<<<<<< HEAD
-
-=======
- 
->>>>>>> master
-    const name = req.params.name
+    let name = req.params.name
     name = name.replace("+", " ")
     let l = new logic(data.height, data.weight, data.age, data.sex, data.activity)
     l.name = name
     l.saveDate = moment()
+    l.post = ""
+    l.food = []
+    
     console.log(l);
     const up = new usersProfile(l)
     const u1 = new user(l)
@@ -49,24 +57,26 @@ router.post('/setProfile/:name', async (req, res) => {
     u1.save()
     up.save()
     res.send("u1")
- })
+})
 
 
 router.put('/updateProfile/:name', (req, res) => {
 
+    console.log(req.body);
     let data = req.body
+    console.log(data);
     const name = req.params.name
-    let l = new logic(data.height, data.weight, data.age, data.sex, data.activity)
-    l.name = name
-    l.saveDate = moment()
-    const u1 = new user(l)
+
+   // let l = new logic(data.height, data.weight, data.age, data.sex, data.activity)
+    // l.name = name
+    // l.saveDate = moment()
+    const u1 = new user(data)
     u1.save()
 
-    usersProfile.findOneAndUpdate({ name: name }, l, { upsert: true }, function (err, doc) {
-        if (err) return res.send(500, { error: err });
-        console.log(doc);
+    usersProfile.findOneAndUpdate({ name: name }, data, { upsert: true }, function (err, doc) {
 
-        return res.send("succesfully saved");
+
+        return res.send(doc);
     })
 })
 
@@ -88,10 +98,14 @@ router.get('/food/:name', (req, res) => {
             let food = JSON.parse(shit.body)
             let mes = food.report.food.nutrients
 
-            let userFilter = mes.filter(u => (u.nutrient_id == 208) || (u.nutrient_id == 203)|| (u.nutrient_id == 204)|| (u.nutrient_id == 205))
-            .map(u =>  {return{"name":u.name,
-            unit : u.unit,
-            value: u.value}})
+            let userFilter = mes.filter(u => (u.nutrient_id == 208) || (u.nutrient_id == 203) || (u.nutrient_id == 204) || (u.nutrient_id == 205))
+                .map(u => {
+                    return {
+                        "name": u.name,
+                        unit: u.unit,
+                        value: u.value
+                    }
+                })
             console.log(userFilter);
             // let userMap = users.map(u => { return { name: u.name, companyName: u.company } })
             // console.log(userMap);
