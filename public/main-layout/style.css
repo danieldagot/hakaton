@@ -1,7 +1,7 @@
 
 
 .nav-wrapper {
-    background-color: rgb(202, 61, 61);
+    background-color: #0A8482;
 }
 
 .logo{
@@ -9,6 +9,15 @@
     cursor: pointer;
 
 }
+
+#heart {
+    color: rgb(196, 81, 81);
+}
+
+#heart:hover {
+    animation: heartbeat 1s infinite;
+}
+
 i {
     font-size: 5vh;
 }
@@ -16,7 +25,7 @@ i {
 /* colomn Bar */
 .allGrid{
     transition: width 0.5s;
-    background: rgb(202, 61, 61);
+    background: #AE6AD8;
     width: 0vw;
     height: 100vh;
     display: grid;
@@ -45,7 +54,37 @@ i {
     font-style: italic;
     cursor: pointer;
     font-weight: bold;
+    color: white;
 }
 .barButtons :hover {
     cursor: pointer;
+}
+
+
+@keyframes heartbeat
+{
+  0%
+  {
+    transform: scale( .75 );
+  }
+  20%
+  {
+    transform: scale( 1 );
+  }
+  40%
+  {
+    transform: scale( .75 );
+  }
+  60%
+  {
+    transform: scale( 1 );
+  }
+  80%
+  {
+    transform: scale( .75 );
+  }
+  100%
+  {
+    transform: scale( .75 );
+  }
 }
