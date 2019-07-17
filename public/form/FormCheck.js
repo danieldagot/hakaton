@@ -38,7 +38,7 @@ function NameCheck(id, divId) {
             error = "This Field Should Contain More Then 3 Letters";
         }
         for (let i = 0; i < text.length; i++) {
-            if (!((text[i] >= 'A' && text[i] <= 'Z') || (text[i] >= 'a' && text[i] <= 'z') || (text[i] >= 'א' && text[i] <= 'ת'))) {
+            if (!((text[i] >= 'A' && text[i] <= 'Z') || (text[i] >= 'a' && text[i] <= 'z') || (text[i] >= 'א' && text[i] <= 'ת')||(text[i] = "\s"))) {
                 error = "This Field Contains Illegal Letters";
                 break;
             }
@@ -99,7 +99,20 @@ function SubmitCheck() {
     error = error + NumCheck('Height', 'HeightError');
     error = error + NumCheck('Weight', 'WeightError');
     if (error == "") {
+        
+        const getDataa = new getData()
+        console.log(getDataa);
+        $.post(`/setProfile/${getDataa.FullName}`, getDataa)
+        localStorage.setItem('LogData', 'True')
+        let fn = (getDataa.FullName).replace(" ", "+")
+        localStorage.setItem('Name', `${fn}`)
+        window.location.replace("http://localhost:8080");
         return true;
     }
     return false;
 }
+
+
+// document.getElementById('Form').onsubmit = function() {
+//     return isValidForm();
+// };

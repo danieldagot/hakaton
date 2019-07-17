@@ -32,7 +32,11 @@ router.get('/getProfile/:name', async (req, res) => {
 
 router.post('/setProfile/:name', async (req, res) => {
     let data = req.body
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> master
     const name = req.params.name
     name = name.replace("+", " ")
     let l = new logic(data.height, data.weight, data.age, data.sex, data.activity)
@@ -45,7 +49,7 @@ router.post('/setProfile/:name', async (req, res) => {
     u1.save()
     up.save()
     res.send("u1")
-})
+ })
 
 
 router.put('/updateProfile/:name', (req, res) => {
