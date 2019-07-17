@@ -105,7 +105,10 @@ function SubmitCheck() {
         $.post(`/setProfile/${getDataa.FullName}`, getDataa)
         localStorage.setItem('LogData', 'True')
         let fn = (getDataa.FullName).replace(" ", "+")
-        localStorage.setItem('Name', `${fn}`)
+
+        localStorage.setItem('Name', `${getDataa.FullName}`)
+       // localStorage.setItem('Name', `${fn}`)
+
         window.location.replace("http://localhost:8080");
         return true;
     }
