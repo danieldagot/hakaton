@@ -6,7 +6,7 @@ const usersProfile = require("../mongoose/models/usersProfile")
 const moment = require("moment")
 //let api = new ColorsApi()
 
-router.get('/logic', (req, res) => {
+router.post('/logic', (req, res) => {
     let data = req.body
 
     console.log(data);

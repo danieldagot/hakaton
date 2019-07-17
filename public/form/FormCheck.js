@@ -99,7 +99,18 @@ function SubmitCheck() {
     error = error + NumCheck('Height', 'HeightError');
     error = error + NumCheck('Weight', 'WeightError');
     if (error == "") {
+        
+        const getDataa = new getData()
+        console.log(getDataa);
+        $.post(`/setProfile/${getDataa.FullName}`, getDataa)
+        localStorage.setItem('LogData', 'True')
+        window.location.replace("http://localhost:8080");
         return true;
     }
     return false;
 }
+
+
+// document.getElementById('Form').onsubmit = function() {
+//     return isValidForm();
+// };
