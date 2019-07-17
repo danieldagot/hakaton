@@ -13,6 +13,7 @@ const router = require('./routes/api')
 app.use( bodyParser.json() )
 app.use( bodyParser.urlencoded( { extended: false } ) )
 
+app.use( express.static( path.join( __dirname, 'public/main-layout' ) ) )
 app.use( express.static( path.join( __dirname, 'public' ) ) )
 app.use( '/', router )
 

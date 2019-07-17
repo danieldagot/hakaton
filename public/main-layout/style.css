@@ -14,7 +14,7 @@
     color: rgb(196, 81, 81);
 }
 
-#heart:hover {
+ .logo:hover, #heart {
     animation: heartbeat 1s infinite;
 }
 
@@ -25,7 +25,7 @@ i {
 /* colomn Bar */
 .allGrid{
     transition: width 0.5s;
-    background: #AE6AD8;
+    background: #A8B3FF;
     width: 0vw;
     height: 100vh;
     display: grid;
