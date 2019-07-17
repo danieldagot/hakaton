@@ -13,8 +13,11 @@ const router = require('./routes/api')
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
-app.use(express.static(path.join(__dirname, 'public/main-layout')))
-app.use('/', router)
+
+app.use( express.static( path.join( __dirname, 'public/main-layout' ) ) )
+app.use( express.static( path.join( __dirname, 'public' ) ) )
+app.use( '/', router )
+
 
 mongoose.connect('mongodb://localhost/users', { useNewUrlParser: true }).then(() => {
     mongoose.set('useFindAndModify', false);
