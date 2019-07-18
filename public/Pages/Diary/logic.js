@@ -1,46 +1,46 @@
-const DiaryPost = function () {
-let today = new Date();
-let date = today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();
-let time = today.getHours() + ":" + today.getMinutes();
-let dateTime = date+' , '+time;
+class DiaryPost  {
+    
 
-    const newID = function (arr) {
-        if (arr.length) {
-            const id = Number((arr[arr.length - 1].id[1]))
-            return id + 1
-        }
-        else return 1
+
+
+
+    constructor(posts){
+        let today = new Date();
+        let date = today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();
+        let time = today.getHours() + ":" + today.getMinutes();
+        let dateTime = date+' , '+time;
+        this.posts = Array.from(posts)
+        this.id = 1
     }
 
-    const posts = [
-    
-    ]
+  
 
-    const getPosts = () => posts
+   
 
-    const addPost = (text) => {
-        id = "p" + newID(posts)
+       getPosts()
+       {
+           return this.posts
+       }
+       addPost(text) {
+      let  id = "p" +  this.id
+      this.id +=1 
         const post = {
-            date: dateTime,
-            text: text,
+            date: this.dateTime,
+            text:  text,
             id: id,
         }
-        posts.push(post)
+        console.log(this.posts);
+        
+        this.posts.push(post)
     }
 
-    const removePost = (postID) => {
-        for (i = 0; i < posts.length; i++) {
-            if (posts[i].id == postID) {
-                posts.splice(i, 1)
+     removePost(postID){
+        for (let i = 0; i < this.posts.length; i++) {
+            if (this.posts[i].id == postID) {
+                this.posts.splice(i, 1)
                 break
             }
         }
-    }
-
-    return {
-        getPosts: getPosts,
-        addPost: addPost,
-        removePost: removePost,
     }
 }
 
