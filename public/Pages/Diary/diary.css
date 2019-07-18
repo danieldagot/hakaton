@@ -1,7 +1,10 @@
 body{
-    background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898; 
+    background-image: url('https://media.istockphoto.com/photos/minimal-work-space-creative-flat-lay-photo-of-workspace-desk-top-view-picture-id932552290');
+    background-size: 100% 100% ;
+    background-repeat: no-repeat;
     background-blend-mode: multiply,multiply;    
-    height: 200vh;
+    height: 150vh;
+    font-family: Open Sans Condensed ;
 }
 #container{
     display: grid;

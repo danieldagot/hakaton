@@ -1,5 +1,6 @@
 .nav-wrapper {
     background-color: rgb(58, 85, 97);
+    
 }
 
 .logo{
@@ -61,6 +62,11 @@ i {
     cursor: pointer;
     background-color: #A8B3FF;
     transition: 0.5s;
+    
+border-top:1px solid #138394;
+border-right:0px solid #138394;
+border-bottom:1px solid #138394;
+border-left:0px solid #138394;
 }
 
 
