@@ -23,12 +23,12 @@
   <div class='test'>My Nutrition</div>
   <div class ="title2">
     My calories for today: {{}} </br>
-    I ate:
+    I Ate:
   </div>
 
       <!-- This will be the Card for the API -->
   <div class="col s12 m7 l4" id="container">
-      <div id = serch>
+      <div id = search>
           <input type="text" id="inputFood" placeholder="Put Your new food here" />
           <input type="number" id= "inputFood2" placeholder="place anter the amount of food" />
         </div><button id="addB1" class = "addB">Search!</button> <button id="addB2" class = "addB">Add it!</button>
@@ -42,17 +42,32 @@
   
           <div class="card-action">
             </div>
-            <div id="donutchart"
-            
-            >
+            <div id="donutchart">
   
       </div>
   </div>
+  <div id='listTitle'>Latest Item You Searched For!</div>
+    <div id = food_list>
+      
+  
+  
+    </div>
 
-  <div id = food_list>
+  <script id="list-template" type="text/x-handlebars-template">
+
+    <table>
+      
+          <tr> <td class='list-item'>{{foodName}}</td></tr>
+        <tr> <td class='list-item'>{{enargy}}</td></tr>
+        <tr> <td class='list-item'>{{Protein}}</td></tr>
+        <tr> <td class='list-item'>{{Fat}}</td></tr>
+        <tr> <td class='list-item'>{{Carbs}}</td></tr>
+    
+    </table>
+  </script>
 
 
-  </div>
+
 
 
 

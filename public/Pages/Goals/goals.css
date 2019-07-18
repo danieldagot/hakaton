@@ -41,9 +41,17 @@ body {
     transition: 0.3s;
     border-radius: 20px;
     width: 35vw;
-    margin-left: 11vw;
+
+    /* margin-left: 11vw; */
+
 }
 .pick:hover{
     cursor: pointer;
     opacity: 1
+
 }
+
+.pickChange {      
+    background-color: rgb(0, 182, 94);
+    width: 40vw;
+    height: 120%;
