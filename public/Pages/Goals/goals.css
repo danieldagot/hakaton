@@ -8,9 +8,9 @@ body {
 }
 
 
-    input[type=text]:optional {
+    /* input[type=text]:optional {
         border: 1px solid #eee;
-      }
+      } */
 
       .goalContainer {
         font-size:20px;
@@ -19,12 +19,17 @@ body {
         border-radius: 20px;
         font-weight: bold;
             font-size: 2em;
-            line-height: 200px;
+            /* line-height: 200px; */
             text-align: center;
             background-color: silver;
             margin-left: 10%; 
             font-family: PT Sans;
-            opacity: 0.5;
+
             -webkit-box-shadow: 0px 0px 30px 11px #ddcdcd; 
             box-shadow: 0px 0px 30px 11px #ffffff;      
     }
+
+.pick:hover{
+    cursor: pointer;
+    opacity: 1
+}
