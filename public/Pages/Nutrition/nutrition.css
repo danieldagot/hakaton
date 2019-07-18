@@ -33,13 +33,13 @@ body {
    
 }
 
-/* .card-image {
+.card-image {
     position: absolute;
     width: 100px;
     height: 100px;
      margin-left: 10px;
     margin-top: 10px; 
-} */
+}
 
 .card-content {
     background-image: url("https://dylzm7u8zqclv.cloudfront.net/2019/03/24/21/19/04/89eb25ca-c13b-489d-bf4f-741ba078d592/Cheese2.jpg")

@@ -1,0 +1,93 @@
+body{ 
+    background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898;  background-blend-mode: multiply,multiply;
+    height: 100vh;
+    
+  }
+  .fullContainer {
+  -webkit-box-shadow: 0px 0px 30px 11px #ddcdcd; 
+  box-shadow: 11px 11px 30px 11px #ffffff; 
+  }
+  
+  .container{
+    font-size: 5rem;
+  }
+  
+  .table {
+    font-size: 1.5em;
+    font-family: PT Sans;
+    margin-left:35vw;
+  }
+  
+  .Error {
+    color: rgb(3, 82, 172);
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+  
+  .MainTitle {
+    font-family: Noto Sans;
+    font-size: 5em;
+    color: bisque;
+  }
+  
+  .SecondTitle {
+    font-family: Open Sans Condensed ;
+    font-size: 2em;
+  }
+  
+  #healthChoice {
+    color: white;
+  }
+  
+  #slideResult {
+    color: white;
+    font-size: 1rem;
+  }
+  
+  
+  .button{
+    height: 35px;
+    width: 100px;
+    border:none;
+    border-radius: 40px;
+    background-color: rgb(27, 149, 248); 
+    color: white;
+    cursor: pointer;
+    
+  }
+  
+  #heart {
+    color: rgb(196, 81, 81);
+    animation: heartbeat 1s infinite;
+  }
+  
+  
+  @keyframes heartbeat
+  {
+    0%
+    {
+      transform: scale( .75 );
+    }
+    20%
+    {
+      transform: scale( 1 );
+    }
+    40%
+    {
+      transform: scale( .75 );
+    }
+    60%
+    {
+      transform: scale( 1 );
+    }
+    80%
+    {
+      transform: scale( .75 );
+    }
+    100%
+    {
+      transform: scale( .75 );
+    }
+  }
+  
