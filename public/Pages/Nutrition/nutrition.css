@@ -20,10 +20,10 @@ body {
 #container {
     display: flexbox ; 
     flex-direction: column; 
-    width: 40vw;
-    height: 40vh;
+    width: 30vw;
+    height: 20vh;
     text-align: center;
-    margin-left: 25vw;
+    margin-left: 65vw;
    
 }
 
@@ -39,12 +39,25 @@ body {
     background-image: url("https://dylzm7u8zqclv.cloudfront.net/2019/03/24/21/19/04/89eb25ca-c13b-489d-bf4f-741ba078d592/Cheese2.jpg")
 }
 
-#addB {
-        height: 5vh;
-        width: 10vw;
-        border:none;
-        border-radius: 40px;
-        background-color: rgb(27, 149, 248); 
-        color: white;
-        cursor: pointer;   
+ 
+.addB {
+    height: 5vh;
+    width: 7vw;
+    border:none;
+    border-radius: 40px;
+    background-color: rgb(27, 149, 248); 
+    color: white;
+    cursor: pointer;   
+}
+.card-action{
+background-color:rgb(108, 4, 4)
+
+}
+
+
+#serch{
+margin-right: 0px ; 
+width: 40vw 
+
+
 }

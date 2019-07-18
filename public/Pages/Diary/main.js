@@ -6,6 +6,9 @@ let name = localStorage.getItem('Name')
 function lode()
 {
     $.getJSON(`http://localhost:8080/getProfile/${name}`, function (res) {
+        console.log(res);
+        console.log(res.posts);
+        
         let posts = JSON.parse(res.posts)
         console.log(posts);
         console.log(res);

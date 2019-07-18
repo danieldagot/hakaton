@@ -48,7 +48,7 @@ router.post('/setProfile/:name', async (req, res) => {
     let l = new logic(data.height, data.weight, data.age, data.sex, data.activity)
     l.name = name
     l.saveDate = moment()
-    l.post = ""
+    l.posts = "{}"
     l.food = "[]"
     
     console.log(l);

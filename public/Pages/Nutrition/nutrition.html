@@ -25,34 +25,38 @@
     My calories for today: {{}} </br>
     I ate:
   </div>
-  <div>
-    <input type="text" id="inputFood" placeholder="Put Your new food here" />
-    <button id="addB">Search!</button>
-  </div>
 
-
-
-  <!-- This will be the Card for the API -->
+      <!-- This will be the Card for the API -->
   <div class="col s12 m7 l4" id="container">
-    <div class="cardhorizontal">
-      <!-- 
-      <div class="card-image">
-        <img id="foodImg" src="https://dylzm7u8zqclv.cloudfront.net/2019/03/24/21/19/04/89eb25ca-c13b-489d-bf4f-741ba078d592/Cheese2.jpg">
-      </div> -->
-      <div class="card-stacked">
-        <div class="card-content"
-          background-image="https://dylzm7u8zqclv.cloudfront.net/2019/03/24/21/19/04/89eb25ca-c13b-489d-bf4f-741ba078d592/Cheese2.jpg">
-          <h2 class="header">Horizontal Card</h2>
-          <p>I am a very simple card. I am good at containing small bits of information.</p>
+      <div id = serch>
+          <input type="text" id="inputFood" placeholder="Put Your new food here" />
+          <input type="number" id= "inputFood2" placeholder="place anter the amount of food" />
+        </div><button id="addB1" class = "addB">Search!</button> <button id="addB2" class = "addB">Add it!</button>
         </div>
-        <div class="card-action">
 
-          <div id="donutchart" style="width: 80vw; height: 45vh;"></div>
-          <button id="addB">Add it!</button>
-        </div>
+      <div class="cardhorizontal">
+        <!-- 
+        <div class="card-image">
+          <img id="foodImg" src="https://dylzm7u8zqclv.cloudfront.net/2019/03/24/21/19/04/89eb25ca-c13b-489d-bf4f-741ba078d592/Cheese2.jpg">
+        </div> -->
+  
+          <div class="card-action">
+            </div>
+            <div id="donutchart"
+            
+            >
+  
       </div>
-    </div>
   </div>
+
+  <div id = food_list>
+
+
+  </div>
+
+
+
+
 
   <!-- <script id="food-template" type='text/x-handlebars-template'>
         <div class="food">
