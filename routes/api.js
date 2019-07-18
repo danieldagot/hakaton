@@ -49,7 +49,7 @@ router.post('/setProfile/:name', async (req, res) => {
     l.name = name
     l.saveDate = moment()
     l.post = ""
-    l.food = []
+    l.food = "[]"
     
     console.log(l);
     const up = new usersProfile(l)
@@ -102,7 +102,6 @@ router.get('/food/:name', (req, res) => {
                 .map(u => {
                     return {
                         "name": u.name,
-                        unit: u.unit,
                         value: u.value
                     }
                 })

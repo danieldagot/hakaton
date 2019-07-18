@@ -8,25 +8,25 @@ body{
 }
 
 #welcome {
-    font-size:70px;
+    font-size:5em;
     font-weight: bold;
     font-family: Noto Sans;
     color: white;
-    margin-left: 30%;
+    margin-left: 15vw;
     margin-bottom: 2%;
 }
 
 #homeContainer {
-    font-size:20px;
+    font-size:2em;
     height:80vh;
     width: 65vw;
-    border-radius: 20px;
+    border-radius: 1em;
     font-weight: bold;
         font-size: 2em;
-        line-height: 200px;
+        line-height: 10vh;
         text-align: center;
         background-color: silver;
-        margin-left: 30%; 
+        margin-left: 15vw; 
         font-family: PT Sans;
         opacity: 0.5;
         -webkit-box-shadow: 0px 0px 30px 11px #ddcdcd; 

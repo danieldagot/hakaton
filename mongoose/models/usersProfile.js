@@ -11,7 +11,7 @@ const Schema = mongoose.Schema
 "recomandetCal": Number,
 "name": String,
 "saveDate": String,
-"food": [String],
+"food": String,
 "posts":String
  } )
 
