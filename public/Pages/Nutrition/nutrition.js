@@ -1,6 +1,38 @@
 let name = localStorage.getItem('Name')
 
 
+function lode (){
+ 
+    
+    $.getJSON(`http://localhost:8080/getProfile/${name}`, function (res) {
+        console.log(res);
+        console.log(res.food);
+        let a = JSON.parse(res.food)
+        let data = (a)[a.length -1 ]
+        console.log(data)
+
+
+
+        $('#food_list').empty()
+        const source = $('#list-template').html();
+        const template = Handlebars.compile(source);
+        const newHTML = template(data);
+        console.log(newHTML)
+        $('#food_list').append(newHTML);
+
+    })
+
+   
+
+}
+
+lode ()
+
+
+
+
+
+
 let body = $("body")
 body.on("click", "#addB1", function () {
     let food = $("#inputFood").val()
@@ -47,33 +79,36 @@ body.on("click", "#addB1", function () {
 body.on("click", "#addB2", function () {
 
     console.log($(".card-action").text())
-   console.log( ("#inputFood2").val());
+   console.log($("#inputFood2").val());
    
     localStorage.getItem("name")
-    Ldata = JSON.parse(localStorage.getItem("food"))
+    let Ldata = JSON.parse(localStorage.getItem("food"))
 
     
     $.getJSON(`http://localhost:8080/getProfile/${name}`, function (res) {
         console.log(res);
-        let obg = { "enargy":  ( Ldata[0].value), "Protein": Ldata[1].value  , "Carbs" : Ldata[2].value, "Fat" : Ldata[3].value}
+        let obg = { "enargy":  ( Ldata[0].value), "Protein": Ldata[1].value  , "Carbs" : Ldata[2].value, "Fat" : Ldata[3].value , "foodName" : $("#inputFood").val()}
     let food = JSON.parse(res.food)
     food.push(obg)
     res.food = JSON.stringify(food)
         console.log();
 
-        // $.ajax({
-        //     url: `http://localhost:8080/updateProfile/${name}`,
-        //     method: "PUT",
-        //     data: res,
-        //     success: function (response) {
-        //         console.log("PUT complete")
-        //     }
+        $.ajax({
+            url: `http://localhost:8080/updateProfile/${name}`,
+            method: "PUT",
+            data: res,
+            success: function (response) {
+                console.log("PUT complete")
+            }
 
 
-        // })
+        })
     })
-
-
+        
+        
+    lode ()
+        
+    
 })
 
 

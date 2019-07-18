@@ -8,23 +8,48 @@ body {
 }
 
 
-    input[type=text]:optional {
+    /* input[type=text]:optional {
         border: 1px solid #eee;
-      }
+      } */
 
       .goalContainer {
         font-size:20px;
-        height:90vh;
+        height:120vh;
         width: 60vw;
         border-radius: 20px;
         font-weight: bold;
             font-size: 2em;
-            line-height: 200px;
+            /* line-height: 200px; */
             text-align: center;
             background-color: silver;
             margin-left: 10%; 
             font-family: PT Sans;
-            opacity: 0.5;
+
             -webkit-box-shadow: 0px 0px 30px 11px #ddcdcd; 
             box-shadow: 0px 0px 30px 11px #ffffff;      
     }
+
+.pick {
+    background-color: #ca2727;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    border-radius: 20px;
+    width: 35vw;
+    /* margin-left: 11vw; */
+}
+.pick:hover{
+    cursor: pointer;
+    opacity: 1
+}
+
+.pickChange {      
+    background-color: rgb(0, 182, 94);
+    width: 40vw;
+    height: 120%;
+}

@@ -11,7 +11,7 @@
 }
 
 .logo:hover{
-  background-color: rgb(7, 90, 89);
+  background-color: rgb(4, 148, 146);
   border-radius: 20px;
 }
 
@@ -33,7 +33,7 @@ i {
     width: 0vw;
     height: 100vh;
     display: grid;
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-rows: repeat(4, 1fr);
     overflow-x: hidden;
     position: absolute;
 }
@@ -60,7 +60,7 @@ i {
     color: white;
     transition: 0.5s;
     cursor: pointer;
-    background-color: #A8B3FF;
+    background-color: rgb(140, 201, 255);
     transition: 0.5s;
     
 border-top:1px solid #138394;
