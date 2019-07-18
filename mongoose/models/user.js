@@ -12,7 +12,6 @@ const Schema = mongoose.Schema
 "name": String,
 "saveDate": String,
 "food": String,
-"posts[posts][0][date]":String,
 "posts": String
  } )
 
